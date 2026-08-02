@@ -27,13 +27,13 @@
 <body>
 
 <h1>Privacy Policy — Logger Helper</h1>
-<p class="updated">Last updated: July 12, 2026</p>
+<p class="updated">Last updated: August 2, 2026</p>
 
 <p>
-  Logger Helper is a Chrome extension that provides copy-paste templates, date-calculation
-  utilities, and a set of self-contained productivity tools (a billing PDF reader, CSV balance
-  reporter, ticket-link generator, and note lists) for use directly in the browser. This policy
-  explains, in plain terms, what happens to your data when you use it.
+  Logger Helper is a Chrome extension that provides copy-paste templates, date and work-day
+  calculations, a consumption calculator, a text comparison tool, personal notes, and lists of
+  shortcut links — all running directly in the browser. This policy explains, in plain terms,
+  what happens to your data when you use it.
 </p>
 
 <div class="note">
@@ -44,17 +44,16 @@
 
 <h2>What data the extension handles</h2>
 <p>Logger Helper stores the following locally, using the browser's built-in
-  <code>chrome.storage</code> and <code>localStorage</code> APIs:</p>
+  <code>localStorage</code> (Web Storage) API:</p>
 <ul>
   <li>Custom log entries, notes, and copy-paste templates you create</li>
   <li>Link lists you configure (e.g. handbook links, formula links, whitelabel links)</li>
-  <li>Your display preferences (such as text size and initials used in log entries)</li>
-  <li>Ticket numbers you paste in, for generating a spreadsheet of ticket links</li>
+  <li>The initials you enter, which are inserted into copied log lines</li>
 </ul>
 <p>
-  The billing PDF reader and CSV balance reporter tools read files you choose to open (PDF or
-  CSV) and process them entirely inside your browser tab to generate a report. These files are
-  never uploaded anywhere.
+  The Update Info page lets you load a shared JSON file to refresh these lists. The file is read
+  from your own computer, or pasted in by you, and is processed entirely inside the browser tab.
+  It is never uploaded anywhere.
 </p>
 
 <h2>What we don't do</h2>
@@ -70,14 +69,13 @@
 </ul>
 
 <h2>Permissions this extension requests</h2>
-<ul>
-  <li><code>storage</code> — used to save the notes, lists, and preferences described above
-    locally in your browser, so they persist between sessions.</li>
-  <li><code>clipboardWrite</code> — used only when you click a copy button, to place the
-    corresponding template text or log line onto your clipboard.</li>
-</ul>
-<p>No other permissions are requested. Logger Helper does not read the content of the web pages
-  you visit and does not have access to your browsing history.</p>
+<p>None. Logger Helper's manifest declares no permissions at all — no host permissions, no
+  optional permissions. It runs no content scripts, does not read the content of the web pages
+  you visit, and has no access to your browsing history.</p>
+<p>The two features that might look as though they need a permission do not. Copy buttons use the
+  browser's standard asynchronous Clipboard API, which is available to any page you have clicked
+  on and requires no declared permission. Your notes and lists are saved with the browser's own
+  <code>localStorage</code>, which likewise needs no permission.</p>
 
 <h2>Data retention and deletion</h2>
 <p>
